@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const userService = require('./services/usersService');
+const userService = require('../services/usersService');
 
 router.get('/', (req, res) => {
     const users = userService.getUsers()
