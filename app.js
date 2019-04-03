@@ -2,6 +2,8 @@
 // const app = express();
 
 // below line is the combination of above 2 lines
+require('./db');
+
 const app = require('express')();
 const bodyParser = require('body-parser');
 const productController = require('./controllers/productsController')
@@ -9,7 +11,7 @@ const logisticsController = require('./controllers/logisticsController')
 const usersController = require('./controllers/usersController')
 const dashboardController = require('./controllers/dashboardController')
 const authController = require('./controllers/authController')
-
+const manufactController = require('./controllers/manufactController')
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
@@ -18,6 +20,8 @@ app.get('/', (req, res) => {
 
 
 app.use('/users', usersController);
+
+app.use('/manufacturers', manufactController);
 
 app.use('/products', productController)
 
